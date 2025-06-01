@@ -88,3 +88,16 @@ function direBonjour (nom?: string | undefined) {
         return "Bonjour, invité"
     }
 }
+
+// ✅ 9. Type alias Identifiant
+type Identifiant = string | number
+function afficherID (identifiant: Identifiant) {
+    console.log(identifiant)
+}
+
+
+// ✅ 10. Filtrer un tableau
+const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function filtrerPairs ( nombres: number[] ) : number[] {
+    return nombres.filter(n => n % 2 === 0)
+}
