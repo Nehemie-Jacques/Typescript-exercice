@@ -1,26 +1,3 @@
-// let nom: string;
-// nom = "chaine de charactere"
-
-// const age: number = 56
-
-const isYoung: boolean = true
-
-
-type Users = {
-    name: string
-    prename: string
-    age: number;
-    ville?: [any]
-}
-
-let user: Users[] = [
-    {
-        name: "rashid",
-        prename: "Haruna",
-        age: 56,
-    }
-]
-
 // ✅ 1. Déclaration de variables typées
 let nom: string = "chaine de charactere"
 let age: number = 100
@@ -49,8 +26,8 @@ let utilisateur : Personne = {
 
 // ✅ 5. Tableau typé + moyenne
 let notes: number[] = [10, 20, 30, 40]
-function calculerMoyenne (notes: number[]) : number {
-
+function calculerMoyenne (notes: number[]): number {
+    return notes.length === 0 ? 0 : notes.reduce((a, b) => a + b, 0) / notes.length;
 }
 
 // ✅ 6. Fonction avec union de types
@@ -76,8 +53,12 @@ function estWeekend (jour: Jour) : boolean {
     if (jour === Jour.Samedi) {
         return true
     } else if (jour === Jour.Dimanche) {
-        return false    
-    }
+        return true
+    } else {
+        return false
+    }    
+
+    // return jour === jour.Samedi || jour === jour.Dimanche;
 }
 
 // ✅ 8. Fonction avec paramètre optionnel
